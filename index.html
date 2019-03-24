@@ -1,319 +1,505 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+
+<head>
     <title>Почему и как твоему Vue нужен TypeScript</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css" />
+    <link href="node_modules/prismjs/themes/prism.css" rel="stylesheet" />
     <style>
-      .shower {
-        --slide-ratio: calc(4 / 3);
-      }
-    </style>
-  </head>
+        .shower {
+            --slide-ratio: calc(4 / 3);
+        }
 
-  <body class="shower list">
+    </style>
+</head>
+
+<body class="shower list">
     <header class="caption">
-      <h1>Почему и как твоему Vue нужен TypeScript</h1>
-      <p>Иван Шпартько</p>
+        <h1>Почему и как твоему Vue нужен TypeScript</h1>
+        <p>Иван Шпартько</p>
     </header>
 
     <section class="slide white" id="cover">
-      <h2>Почему и как твоему Vue нужен TypeScript</h2>
-      <p><a href="https://t.me/ishpartko">Иван Шпартько</a></p>
-      <img src="pictures/vueplusts.png" alt="vue plus ts" />
-      <style>
-        #cover h2 {
-          margin: 30px 0 0;
-          text-align: center;
-          font-size: 70px;
-        }
+        <h2>Почему и как твоему Vue нужен TypeScript</h2>
+        <p><a href="https://t.me/ishpartko">Иван Шпартько</a></p>
+        <img src="pictures/vueplusts.png" alt="vue plus ts" />
+        <style>
+            #cover h2 {
+                margin: 30px 0 0;
+                text-align: center;
+                font-size: 70px;
+            }
 
-        #cover img {
-          margin-top: 20px;
-        }
+            #cover img {
+                margin-top: 20px;
+            }
 
-        #cover p {
-          margin: 10px 0 0;
-          text-align: center;
-          color: white;
-          font-style: italic;
-          font-size: 20px;
-        }
-      </style>
+            #cover p {
+                margin: 10px 0 0;
+                text-align: center;
+                color: white;
+                font-style: italic;
+                font-size: 20px;
+            }
+
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Чужой код?</h2>
+        <ul>
+            <li class="next">Библиотеки</li>
+            <li class="next">Наследство</li>
+            <li class="next">Code review</li>
+            <li class="next"><s>Свой, через время</s></li>
+        </ul>
+    </section>
+
+    <section class="slide" id="musk">
+        <h2>Как тебе такое, Илон Маск?</h2>
+        <pre class="language-js"><code>function createCar(fuel, model, owner) {
+  let car;
+  /* business logic */
+  return car;
+  }
+</code></pre>
+        <img src="pictures/musk.jpg" class="place bottom center" height="300px" alt="">
+        <style>
+            #musk pre code {
+                padding: 0;
+                margin: 0;
+                width: 100%
+            }
+
+        </style>
     </section>
 
     <section class="slide" id="doc">
-      <h2>Обычная документация</h2>
-      <img class="jenga" src="pictures/jenga.png" alt="jenga" height="240" />
-      <ul class="min">
-        <li class="next">Время изучения</li>
-        <li class="next">Нужно перечитывать</li>
-        <li class="next">Написал - измени документацию</li>
-        <li class="next">Чаще всего - неактуальная</li>
-        <li class="next">Вне кода</li>
-      </ul>
-      <ul class="plus">
-        <li class="next">Хорошо, если она есть</li>
-      </ul>
-      <style>
-        #doc .min li::before {
-          content: '-';
-          color: red;
-        }
+        <h2>Обычная документация кода</h2>
+        <img class="jenga" src="pictures/jenga.png" alt="jenga" height="240" />
+        <ul class="min">
+            <li class="next">Время изучения документации</li>
+            <li class="next">Нужно перечитывать</li>
+            <li class="next">Написал код - измени документацию</li>
+            <li class="next">Чаще всего - неактуальная</li>
+            <li class="next">Вне кода</li>
+        </ul>
+        <ul class="plus">
+            <li class="next">Хорошо, если она есть</li>
+        </ul>
+        <style>
+            #doc .min li::before {
+                content: '-';
+                color: red;
+            }
 
-        #doc .plus li::before {
-          content: '+';
-          color: green;
-        }
+            #doc .plus li::before {
+                content: '+';
+                color: green;
+            }
 
-        #doc .jenga {
-          float: right;
-        }
-      </style>
+            #doc .jenga {
+                float: right;
+            }
+
+        </style>
     </section>
 
-    <section class="slide black" id="jenga">
-      <h2 class="shout">Похоже на «Jenga»</h2>
-      <figure>
-        <img
-          class="cover"
-          src="pictures/difficult.jpg"
-          alt="запутанная документация"
-        />
-      </figure>
-      <style>
-        #jenga h2 {
-          color: white;
-        }
+    <section class="slide" id="jsdoc">
+        <h2><a href="http://usejsdoc.org/">JSDoc</a>?</h2>
+        <pre><code class="language-js ">/*
+  @function Determines some car
+  @param {boolean} fuel - Is electic Car
+  @param {number} model - Model of new Car
+  @param {string} owner - Name of owner
+*/
+function createCar(fuel, model, owner) {
+  let car;
+  /* business logic */
+  return car;
+}
+</code></pre>
+        <style>
+            #jsdoc pre code {
+                padding: 0;
+                margin: 0;
+                width: 100%
+            }
 
-        #jenga figure {
-          box-shadow: 0 0 0 1024px rgba(0, 0, 0, 0.5);
-        }
-      </style>
+        </style>
+    </section>
+
+    <section class="slide" id="doc">
+        <h2><a href="http://usejsdoc.org/">JSDoc</a> комментарии</h2>
+        <img class="jenga" src="pictures/jenga.png" alt="jenga" height="240" />
+        <ul class="min">
+            <li class="next">Ненадёжные</li>
+            <li class="next">Многословность</li>
+            <li class="next">Трудно поддерживать</li>
+            <li class="next">Не имеют чёткой структуры</li>
+            <li class="next">Иногда неактуальны</li>
+        </ul>
+        <style>
+            #doc .min li::before {
+                content: '-';
+                color: red;
+            }
+
+            #doc .plus li::before {
+                content: '+';
+                color: green;
+            }
+
+            #doc .jenga {
+                float: right;
+            }
+
+        </style>
+    </section>
+
+    <section class="slide" id="ok">
+        <h2>Все ОК, ребят?</h2>
+        <img class="place center" src="pictures/good.png" alt="">
     </section>
 
     <section class="slide black" id="solution">
-      <h2>Решение - Типизация проекта</h2>
-      <blockquote class="place center">
-        <p>
-          «Если это выглядит как утка, плавает как утка и крякает как утка, то,
-          вероятно, это утка (какая разница, что это на самом деле)»
-        </p>
-      </blockquote>
-      <figure>
-        <img class="cover" src="pictures/duck.jpg" alt="" />
-      </figure>
-      <style>
-        #solution > * {
-          color: white;
-        }
-
-        #solution figure {
-          box-shadow: 0 0 0 1024px rgba(0, 0, 0, 0.6);
-        }
-      </style>
-    </section>
-
-    <section class="slide">
-      <img class="cover height" src="pictures/carbon.png" alt="" />
-    </section>
-
-    <section class="slide">
-      <img class="cover width" src="pictures/types-errors.png" alt="" />
-    </section>
-
-    <section class="slide">
-      <h2 class="shout">strict: true</h2>
-    </section>
-
-    <section class="slide">
-      <h2>strictNullChecks</h2>
-      <pre>
-        <code>let x: number;</code>
-        <code>let y: number | undefined;</code>
-        <code>let z: number | null | undefined;</code>
-      </pre>
-    </section>
-
-    <section class="slide">
-      <h2>noImplicitAny</h2>
-      <p>Выдает ошибку если тип переменной или параметра не указан явно</p>
-    </section>
-
-    <section class="slide">
-      <h2>alwaysStrict</h2>
-      <p>
-        Всегда обрабатывает ваши файлы в
-        <a
-          href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Strict_mode"
-          >strict режиме</a
-        >
-      </p>
-    </section>
-
-    <section class="slide">
-      <h2 class="shout">
-        <a
-          href="https://www.typescriptlang.org/docs/handbook/compiler-options.html"
-          >Другие опции TS компилятора
-        </a>
-      </h2>
-    </section>
-
-    <section class="slide">
-      <h2>Каковы самые слабые места Vue?</h2>
-      <figure>
-        <blockquote>
-          <p>
-            На данный момент, наверное, недружественность к типизации. Наш API
-            разрабатывался без планирования поддержки типизированных языков
-            (типа TypeScript), но мы сделали большие улучшения в 2.5.
-          </p>
+        <h2>Решение - Типизация проекта</h2>
+        <blockquote class="place center">
+            <p>
+                «Если это выглядит как утка, плавает как утка и крякает как утка, то,
+                вероятно, это утка (какая разница, что это на самом деле)»
+            </p>
         </blockquote>
-        <figcaption>
-          <a href="https://habr.com/ru/post/350290/" target="_blank">
-            Evan You
-          </a>
-        </figcaption>
-      </figure>
+        <figure>
+            <img class="cover" src="pictures/duck.jpg" alt="" />
+        </figure>
+        <style>
+            #solution>* {
+                color: white;
+            }
+
+            #solution figure {
+                box-shadow: 0 0 0 1024px rgba(0, 0, 0, 0.6);
+            }
+
+        </style>
+    </section>
+    <section class="slide" id="js_typings">
+        <img src="pictures/js_typing.png" alt="">
+        <div class="google-body">
+            <figure>
+                <img src="pictures/elm.png" alt="">
+                <figcaption>Elm</figcaption>
+            </figure>
+
+            <figure>
+                <img src="pictures/dart.png" alt="">
+                <figcaption>Dart</figcaption>
+            </figure>
+            <figure class="">
+                <img src="pictures/flow.svg" alt="">
+                <figcaption>Flow</figcaption>
+            </figure>
+            <figure class="ts-size">
+                <img src="pictures/typescript.png" alt="">
+                <figcaption>TypeScript</figcaption>
+            </figure>
+            <figure>
+                <img src="pictures/reason.svg" alt="">
+                <figcaption>Reason <p class="next">
+                        hi
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+
+        <style>
+            #js_typings * {
+                box-sizing: border-box;
+            }
+
+            #js_typings .google-body {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                position: relative;
+            }
+
+            #js_typings .google-body figure {
+                position: relative;
+                width: 30%;
+                max-height: 200px;
+                margin-bottom: 20px;
+            }
+
+            #js_typings figure img {
+                height: 80%;
+            }
+
+            #js_typings .next figure {
+                box-shadow: 0 0 0 1024px rgba(0, 0, 0, 0.6);
+            }
+
+        </style>
     </section>
 
     <section class="slide">
-      <h2>Сейчас настройка TypeScript во Vue проекте очень тривиальна</h2>
-      нужно всего лишь...
-      <ol>
-        <li class="next active">Настроить <b>tsconfig.json</b></li>
-        <li class="next">
-          Настроить ваш сборщик под импорт TS (ts-loader в Webpack)
-        </li>
-        <li class="next">
-          Настроить импорт однофайловых компонентов *.vue (vue-shims.d.ts)
-        </li>
-        <li class="next">
-          Добавить в зависимости для декораторов
-          <ul class="next">
-            <li>
-              <a
-                href="https://github.com/vuejs/vue-class-component"
-                target="_blank"
-              >
-                vue-class-component
-              </a>
+        <h2>Почему typecript?</h2>
+        <ul>
+            <li>Почти единый синтаксис с JavaScript</li>
+            <li>Богатая экосистема</li>
+            <li>Большое комьюнити</li>
+            <li>Большие компании используют</li>
+            <li>Простота освоения</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="tscode">
+        <h2><a href="https://www.typescriptlang.org/">TypeScript</a>?</h2>
+        <pre><code class="language-ts ">function createCar(
+  fuel: boolean,
+  model: number,
+  owner: string): Car {
+  let car;
+  /* business logic */
+  return car;
+}
+</code></pre>
+        <style>
+            #tscode pre code {
+                padding: 0;
+                margin: 0;
+                width: 100%
+            }
+
+        </style>
+    </section>
+
+    <section class="slide" id="doc">
+        <h2><a href="https://www.typescriptlang.org/">TypeScript</a> типы</h2>
+        <ul class="plus">
+            <li class="next">Надёжные</li>
+            <li class="next">Всегда актуальные</li>
+            <li class="next">Имеют чётко определенный синтаксис</li>
+            <li class="next">Находятся в коде</li>
+            <li class="next">Поддержка IDE</li>
+            <li class="next">Расширяют обычный JS</li>
+        </ul>
+        <ul class="min">
+            <li class="next">Нужно время для изучения синтаксиса</li>
+            <li class="next">Написание дополнительного кода</li>
+        </ul>
+        <style>
+            #doc .min li::before {
+                content: '-';
+                color: red;
+            }
+
+            #doc .plus li::before {
+                content: '+';
+                color: green;
+            }
+
+            #doc .jenga {
+                float: right;
+            }
+
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Unit тесты? А может сначала TypeScript?</h2>
+        <figure class="place center">
+            <img src="pictures/unit-tests.jpg" alt="">
+            <figcaption>
+                <s>
+                    <h3>TDD разработчик</h3>
+                </s>
+            </figcaption>
+        </figure>
+
+
+    </section>
+
+    <section class="slide">
+        <img class="cover width" src="pictures/error_type1.png" alt="" />
+    </section>
+
+    <section class="slide">
+        <img class="cover width" src="pictures/error_type2.png" alt="" />
+    </section>
+
+    <section class="slide">
+        <h2>Когда использовать</h2>
+        <ul>
+            <li class="next">Нужно быстро и точно понимать код</li>
+            <li class="next">Это важно</li>
+            <li class="next">Это сложно</li>
+            <li class="next">Нужно рефакторить</li>
+        </ul>
+        <h2>Не нужно если</h2>
+        <ul>
+            <li class="next">Это временное решение</li>
+            <li class="next">Прототип</li>
+            <li class="next">Это простое и маленькое</li>
+            <li class="next">Вы единственный разработчик</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Каковы самые слабые места Vue?</h2>
+        <figure>
+            <blockquote>
+                <p>
+                    На данный момент, наверное, недружественность к типизации. Наш API
+                    разрабатывался без планирования поддержки типизированных языков
+                    (типа TypeScript), но мы сделали большие улучшения в 2.5.
+                </p>
+            </blockquote>
+            <figcaption>
+                <a href="https://habr.com/ru/post/350290/" target="_blank">
+                    Evan You
+                </a>
+            </figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Сейчас настройка TypeScript во Vue проекте очень тривиальна</h2>
+        нужно всего лишь...
+        <ol>
+            <li class="next active">Настроить <b>tsconfig.json</b></li>
+            <li class="next">
+                Настроить ваш сборщик под импорт TS (ts-loader в Webpack)
             </li>
             <li class="next">
-              <a
-                href="https://github.com/kaorun343/vue-property-decorator"
-                target="_blank"
-              >
-                vue-property-decorator
-              </a>
+                Настроить импорт однофайловых компонентов *.vue (vue-shims.d.ts)
             </li>
-          </ul>
-        </li>
-      </ol>
+            <li class="next">
+                Добавить в зависимости для декораторов
+                <ul class="next">
+                    <li>
+                        <a href="https://github.com/vuejs/vue-class-component" target="_blank">
+                            vue-class-component
+                        </a>
+                    </li>
+                    <li class="next">
+                        <a href="https://github.com/kaorun343/vue-property-decorator" target="_blank">
+                            vue-property-decorator
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ol>
     </section>
 
     <section class="slide">
-      <h2>А может проще будет сову нарисовать?</h2>
-      <figure>
-        <img src="pictures/owl.jpg" class="cover" alt="Сова" />
-      </figure>
+        <h2>А может проще будет сову нарисовать?</h2>
+        <figure>
+            <img src="pictures/owl.jpg" class="cover" alt="Сова" />
+        </figure>
     </section>
 
     <section class="slide">
-      <h2>
-        Путь проще -
-        <a href="https://cli.vuejs.org/ru/guide/">Vue CLI</a><br />
-        (Аналог create-react-app)
-      </h2>
-      <h3>
-        <code>
-          $ yarn global add @vue/cli <br />
-          # ИЛИ <br />
-          $ npm install -g @vue/cli
-        </code>
-      </h3>
+        <h2 class="place center">
+            Путь проще -
+            <a href="https://cli.vuejs.org/ru/guide/">Vue CLI</a><br />
+            (Аналог create-react-app)
+        </h2>
     </section>
 
     <section class="slide">
-      <h2><code>$ vue create</code></h2>
-      <img class="cover width" src="pictures/vue-cli.png" alt="" />
+        <h2><code>$ vue create</code></h2>
+        <img class="cover width" src="pictures/vue-cli.png" alt="" />
     </section>
 
     <section class="slide">
-      <img class="cover height" src="pictures/vue-ts-folder.png" alt="" />
+        <img class="cover height" src="pictures/vue-ts-folder.png" alt="" />
     </section>
 
     <section class="slide">
-      <h2>
-        <code>$ yarn serve</code>
-      </h2>
-      <img class="cover width" src="pictures/vue-serve.png" alt="" />
+        <h2>
+            <code>$ yarn serve</code>
+        </h2>
+        <img class="cover width" src="pictures/vue-serve.png" alt="" />
     </section>
 
     <section class="slide">
-      <h2>
-        Все сразу работает «из коробки»
-      </h2>
-      <img class="cover" src="pictures/served-example.png" alt="" />
+        <h2>
+            Все сразу работает «из коробки»
+        </h2>
+        <img class="cover" src="pictures/served-example.png" alt="" />
     </section>
 
-    <section class="slide">
-      <h2>One more think</h2>
-      <h3>
-        <pre><code class="place center left">
-<p class="next">  console.log(<mark>instanseof(TypeScript) !== Панацея</mark>);
+    <section class="slide" id="one-more">
+        <img src="pictures/one-more.jpg" class="cover width height">
+        <h3>
+            <pre><code class="place center left"><p class="next">  <mark>instanseof(TypeScript) !== Панацея</mark>
   // true</p>
-<p class="next">  console.log(<mark>Документация === <i>Хорошо</i></mark>); 
+  <p class="next">  <mark>Документация === <i>Хорошо</i></mark>
   // true</p>
 </code>
 </pre>
-      </h3>
+        </h3>
+        <style>
+            #one-more h3 {
+                box-shadow: 0 0 0 1024px rgba(0, 0, 0, 0.6);
+            }
+
+            #one-more * {
+                color: white;
+            }
+
+            #one-more mark *,
+            #one-more mark {
+                color: black;
+            }
+
+        </style>
     </section>
 
     <section class="slide">
-      <h2>Полезные материалы</h2>
-      <ol>
-        <li>
-          <a
-            href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
-            target="_blank"
-          >
-            TypeScript за 5 минут (eng.)
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://ru.vuejs.org/v2/guide/typescript.html"
-            target="_blank"
-          >
-            Официальная поддержка TypeScript во Vue 2
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/Microsoft/TypeScript-Vue-Starter#typescript-vue-starter"
-            target="_blank"
-          >
-            Гайд по настройке ts во vue от Microsoft (eng.)
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/watch?v=srqqwuqzYMM" target="_blank">
-            Андрей Старовойт — Эволюция TypeScript: всё чудесатее и чудесатее
-          </a>
-        </li>
-      </ol>
+        <h2>Полезные материалы</h2>
+        <ol>
+            <li>
+                <a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html" target="_blank">
+                    TypeScript за 5 минут (eng.)
+                </a>
+            </li>
+            <li>
+                <a href="https://ru.vuejs.org/v2/guide/typescript.html" target="_blank">
+                    Официальная поддержка TypeScript во Vue 2
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/Microsoft/TypeScript-Vue-Starter#typescript-vue-starter" target="_blank">
+                    Гайд по настройке ts во vue от Microsoft (eng.)
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/watch?v=srqqwuqzYMM" target="_blank">
+                    Андрей Старовойт — Эволюция TypeScript: всё чудесатее и чудесатее
+                </a>
+            </li>
+        </ol>
     </section>
 
-    <footer class="badge">
-      <a href="https://github.com/shower/shower">Fork me on GitHub</a>
-    </footer>
+    <section class="slide">
+        <h2 class="shout"><a href="t.me/ishpartko">@ishpartko</a></h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Вопросы?</h2>
+    </section>
 
     <div class="progress"></div>
 
     <script src="node_modules/shower-core/shower.min.js"></script>
-    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
-  </body>
+    <script src="node_modules/prismjs/prism.js"></script>
+    <script src="node_modules/prismjs/components/prism-typescript.min.js"></script>
+    <script src="node_modules/prismjs/components/prism-javascript.min.js"></script>
+</body>
+
 </html>
