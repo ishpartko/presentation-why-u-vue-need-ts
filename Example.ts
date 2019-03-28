@@ -16,7 +16,7 @@ function createCar(
   return car;
 }
 
-createCar(true, 'DonetskJS car');
+createCar();
 createCar('True', 'DonetskJS car', 2019);
 createCar(true, 'DonetskJS car', new Date());
 
