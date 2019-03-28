@@ -59,7 +59,7 @@
 
     <section class="slide" id="musk">
         <h2>Как тебе такое, Илон Маск?</h2>
-        <pre class="language-js"><code>function createCar(fuel, model, owner) {
+        <pre class="language-js"><code>function createCar(rightHand, model, year) {
   let car;
   /* business logic */
   return car;
@@ -111,11 +111,11 @@
         <h2><a href="http://usejsdoc.org/">JSDoc</a>?</h2>
         <pre><code class="language-js ">/*
   @function Determines some car
-  @param {boolean} fuel - Is electic Car
-  @param {number} model - Model of new Car
-  @param {string} owner - Name of owner
+  @param {boolean} rightHand - It has right hand drive
+  @param {string} model - Model of new Car
+  @param {number} year - year of car
 */
-function createCar(fuel, model, owner) {
+function createCar(rightHand, model, year) {
   let car;
   /* business logic */
   return car;
@@ -256,9 +256,9 @@ function createCar(fuel, model, owner) {
     <section class="slide" id="tscode">
         <h2>Создаем машину</h2>
         <pre><code class="language-ts ">function createCar(
-  fuel: boolean,
-  model: number,
-  owner: string): Car {
+  rightHand: boolean,
+  model: string,
+  year: number): Car {
   let car;
   /* business logic */
   return car;

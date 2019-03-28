@@ -1,7 +1,22 @@
-function calculateDate(format: boolean, value: number, method: string): Date {
-    let date = new Date();
-    /* business logic */
-    return date;
+interface Car {
+    rightHand: boolean,
+    model: string,
+    year: number
 }
 
-calculateDate('true', 123, 'method_1');
+function createCar(
+  rightHand: boolean,
+  model: string,
+  year: number): Car {
+  const car = {
+      rightHand,
+      model,
+      year
+  }
+  return car;
+}
+
+createCar(true, 'DonetskJS car');
+createCar('True', 'DonetskJS car', 2019);
+createCar(true, 'DonetskJS car', new Date());
+
