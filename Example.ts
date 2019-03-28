@@ -16,9 +16,5 @@ function createCar(
   return car;
 }
 
-
-
-
-
 createCar(true, 'DonetskJS car', new Date());
 

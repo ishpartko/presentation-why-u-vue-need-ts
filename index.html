@@ -57,6 +57,10 @@
         </ul>
     </section>
 
+    <section class="slide">
+        <h2 class="shout">Существующий проект.</h2>
+    </section>
+
     <section class="slide" id="musk">
         <h2>Как тебе такое, Илон Маск?</h2>
         <pre class="language-js"><code>function createCar(rightHand, model, year) {
@@ -78,33 +82,23 @@
 
     <section class="slide" id="doc">
         <h2>Обычная документация кода</h2>
-        <img class="jenga" src="pictures/jenga.png" alt="jenga" height="240" />
-        <ul class="min">
-            <li class="next">Время изучения документации</li>
-            <li class="next">Нужно перечитывать</li>
-            <li class="next">Написал код - измени документацию</li>
-            <li class="next">Чаще всего - неактуальная</li>
-            <li class="next">Вне кода</li>
-        </ul>
-        <ul class="plus">
-            <li class="next">Хорошо, если она есть</li>
-        </ul>
+        <pre class="language-js"><code>/*
+* Эта функция создает машину
+*/
+function createCar(rightHand, model, year) {
+    let car;
+    /* business logic */
+    return car;
+    }
+        </code></pre>
         <style>
-            #doc .min li::before {
-                content: '-';
-                color: red;
-            }
-
-            #doc .plus li::before {
-                content: '+';
-                color: green;
-            }
-
-            #doc .jenga {
-                float: right;
-            }
-
-        </style>
+                #doc pre code {
+                    padding: 0;
+                    margin: 0;
+                    width: 100%
+                }
+    
+            </style>
     </section>
 
     <section class="slide" id="jsdoc">
@@ -131,32 +125,11 @@ function createCar(rightHand, model, year) {
         </style>
     </section>
 
-    <section class="slide" id="doc">
-        <h2><a href="http://usejsdoc.org/">JSDoc</a> комментарии</h2>
-        <img class="jenga" src="pictures/jenga.png" alt="jenga" height="240" />
-        <ul class="min">
-            <li class="next">Ненадёжные</li>
-            <li class="next">Многословность</li>
-            <li class="next">Трудно поддерживать</li>
-            <li class="next">Не имеют чёткой структуры</li>
-            <li class="next">Иногда неактуальны</li>
-        </ul>
-        <style>
-            #doc .min li::before {
-                content: '-';
-                color: red;
-            }
-
-            #doc .plus li::before {
-                content: '+';
-                color: green;
-            }
-
-            #doc .jenga {
-                float: right;
-            }
-
-        </style>
+    <section class="slide" id="jsdocdesc">
+        <figure class="place center">
+            <img src="pictures/jenga.png" alt="jenga" height="240" />
+            <h2 ><a href="http://usejsdoc.org/">JSDoc</a> комментарии</h2>
+        </figure>
     </section>
 
     <section class="slide" id="ok">
@@ -247,15 +220,20 @@ function createCar(rightHand, model, year) {
         </style>
     </section>
 
-    <section class="slide">
-        <h2>Почему <a href="https://www.typescriptlang.org/">TypeScript</a>?</h2>
-        <ul>
-            <li>Почти единый синтаксис с JavaScript</li>
-            <li>Богатая экосистема</li>
-            <li>Большое комьюнити</li>
-            <li>Большие компании используют</li>
-            <li>Простота освоения</li>
-        </ul>
+    <section class="slide" id="why-ts">
+        <a href="https://www.typescriptlang.org/" class="cover"><img src="pictures/typescript.png" alt=""></a>
+        <style>
+        #why-ts {
+            position: relative;
+        }
+        #why-ts a, #why-ts a:active {
+            background-image: none;
+        }
+        #why-ts img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        </style>
     </section>
 
     <section class="slide" id="tscode">
@@ -274,38 +252,6 @@ function createCar(rightHand, model, year) {
                 padding: 0;
                 margin: 0;
                 width: 100%
-            }
-
-        </style>
-    </section>
-
-    <section class="slide" id="doc">
-        <h2><a href="https://www.typescriptlang.org/">TypeScript</a> типы</h2>
-        <ul class="plus">
-            <li class="next">Надёжные</li>
-            <li class="next">Всегда актуальные</li>
-            <li class="next">Имеют чётко определенный синтаксис</li>
-            <li class="next">Находятся в коде</li>
-            <li class="next">Поддержка IDE</li>
-            <li class="next">Расширяют обычный JS</li>
-        </ul>
-        <ul class="min">
-            <li class="next">Нужно время для изучения синтаксиса</li>
-            <li class="next">Написание дополнительного кода</li>
-        </ul>
-        <style>
-            #doc .min li::before {
-                content: '-';
-                color: red;
-            }
-
-            #doc .plus li::before {
-                content: '+';
-                color: green;
-            }
-
-            #doc .jenga {
-                float: right;
             }
 
         </style>
