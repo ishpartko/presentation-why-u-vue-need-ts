@@ -15,4 +15,5 @@ function createCar(rightHand, model, year) {
   return car;
 }
 
-createCar('True', 'DonetskJS car', 2019);
+createCar();
+
