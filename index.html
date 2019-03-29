@@ -21,34 +21,44 @@
         <p>Иван Шпартько</p>
     </header>
 
-    <section class="slide white" id="cover">
+    <section class="slide white" id="first">
         <h2>Почему и как твоему Vue нужен TypeScript</h2>
-        <p><a href="https://t.me/ishpartko">Иван Шпартько</a></p>
-        <img src="pictures/vueplusts.png" alt="vue plus ts" />
+        <p ><a href="https://t.me/ishpartko">Иван Шпартько</a></p>
         <style>
-            #cover h2 {
-                margin: 30px 0 0;
-                text-align: center;
-                font-size: 70px;
-            }
-
-            #cover img {
-                margin-top: 20px;
-            }
-
-            #cover p {
-                margin: 10px 0 0;
-                text-align: center;
-                color: white;
-                font-style: italic;
-                font-size: 20px;
-            }
-
+         #first {
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+         }
         </style>
     </section>
 
-    <section class="slide">
-        <h2 class="place center">Немного обо мне</h2>
+    <section class="slide" id="about">
+        <h2>Немного обо мне</h2>
+        <p>21, работаю в web с 2015</p>
+        <figure>
+            <img src="pictures/about/1200px-Vue.js_Logo_2.svg.png" alt="">
+            <img src="pictures/about/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="">
+            <img src="pictures/about/1200px-Node.js_logo.svg.png" alt="">
+            <img src="pictures/about/icon-square-big.png" alt="">
+            <img src="pictures/about/logo.png" alt="">
+            <img src="pictures/about/1 o_bekXjEb8aHFzEA0y5b4Q.png" alt="">
+        </figure>
+        <style>
+            #about figure {
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                justify-content: space-around;
+            }
+
+            #about figure img {
+                max-width: 30%;
+                height: auto;
+                object-fit: contain;
+            }
+        </style>
     </section>
 
     <section class="slide">
@@ -256,6 +266,14 @@ function createCar(rightHand, model, year) {
             }
         </style>
     </section>
+    
+    <section class="slide">
+        <h2 class="place center">TypeScript ≈ JavaScript</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place center">Большая экосистема и комьюнити</h2>
+    </section>
 
 
     <section class="slide" id="tscode">
@@ -280,15 +298,26 @@ function createCar(rightHand, model, year) {
     </section>
 
     <section class="slide">
+        <h2 class="place center">TypeScript <s>кушает</s> экономит ваше время</h2>
+    </section>
+
+    <section class="slide">
         <h2>Unit тесты? А может сначала TypeScript?</h2>
         <figure class="place center">
             <img src="pictures/unit-tests.jpg" alt="">
-            <figcaption>
-                <s>
-                    <h3>TDD разработчик</h3>
-                </s>
-            </figcaption>
         </figure>
+    </section>
+
+    <section class="slide">
+        <h2 class="place center">Защищает вас от банальных ошибок</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place center">TypeScript дает свободу рефакторинга</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place center">TypeScript объясняет ваш код</h2>
     </section>
 
     <section class="slide">
