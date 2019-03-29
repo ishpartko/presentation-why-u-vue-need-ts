@@ -281,20 +281,24 @@ function createCar(rightHand, model, year) {
     </section>
 
     <section class="slide" id="when-need">
-        <h2>Когда использовать</h2>
-        <ul>
-            <li class="next">Нужно быстро и точно понимать код</li>
-            <li class="next">Это важно</li>
-            <li class="next">Это сложно</li>
-            <li class="next">Нужно рефакторить</li>
-        </ul>
-        <h2 class="next">Не нужно если</h2>
-        <ul>
-            <li class="next">Это временное решение</li>
-            <li class="next">Прототип</li>
-            <li class="next">Это простое и маленькое</li>
-            <li class="next">Вы единственный разработчик</li>
-        </ul>
+        <div class="next active">
+            <h2>Когда использовать</h2>
+            <ul>
+                <li>Нужно быстро и точно понимать код</li>
+                <li>Это важно</li>
+                <li>Это сложно</li>
+                <li>Нужно рефакторить</li>
+            </ul>
+        </div>
+        <div class="next">
+            <h2>Не нужно если</h2>
+            <ul>
+                <li>Это временное решение</li>
+                <li>Прототип</li>
+                <li>Это простое и маленькое</li>
+                <li>Вы единственный разработчик</li>
+            </ul>
+        </div>
         <figure>
             <img src="pictures/960.jpg" alt="" class="cover h">
         </figure>
@@ -338,9 +342,6 @@ function createCar(rightHand, model, year) {
             <li class="next active">Настроить <b>tsconfig.json</b></li>
             <li class="next">
                 Настроить ваш сборщик под импорт TS
-            </li>
-            <li class="next">
-                Настроить импорт однофайловых компонентов *.vue
             </li>
             <li class="next">
                 Добавить в зависимости для декораторов
