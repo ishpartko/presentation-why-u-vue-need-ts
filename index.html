@@ -48,6 +48,10 @@
     </section>
 
     <section class="slide">
+        <h2 class="place center">Немного обо мне</h2>
+    </section>
+
+    <section class="slide">
         <h2 class="place center">Документирование кода :(</h2>
     </section>
 
@@ -227,6 +231,33 @@ function createCar(rightHand, model, year) {
         </style>
     </section>
 
+    <section class="slide" id="ts-company">
+        <figure>
+            <img src="pictures/who-use/wix.png" alt="">
+            <img src="pictures/who-use/1200px-EBay_logo.svg.png" alt="">
+            <img src="pictures/who-use/Reddit_logo_full_1.png" alt="">
+            <img src="pictures/who-use/Ubisoft.png" alt="">
+            <img src="pictures/who-use/angular.svg" alt="">
+        </figure>
+        <style>
+            #ts-company figure {
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                justify-content: space-around;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            #ts-company figure img {
+                max-width: 30%;
+                height: auto;
+                object-fit: contain;
+            }
+        </style>
+    </section>
+
+
     <section class="slide" id="tscode">
         <h2>Создаем машину</h2>
         <pre><code class="language-ts ">function createCar(
@@ -276,6 +307,10 @@ function createCar(rightHand, model, year) {
     </section>
 
     <section class="slide">
+        <img class="cover width" src="pictures/example-no-unit/all good.png" alt="" />
+    </section>
+
+    <section class="slide">
         <img class="cover width" src="pictures/example-no-unit/3.1.png" alt="" />
         <img class="cover width next" src="pictures/example-no-unit/3.2.png" alt="" />
     </section>
@@ -288,15 +323,6 @@ function createCar(rightHand, model, year) {
                 <li>Это важно</li>
                 <li>Это сложно</li>
                 <li>Нужно рефакторить</li>
-            </ul>
-        </div>
-        <div class="next">
-            <h2>Не нужно если</h2>
-            <ul>
-                <li>Это временное решение</li>
-                <li>Прототип</li>
-                <li>Это простое и маленькое</li>
-                <li>Вы единственный разработчик</li>
             </ul>
         </div>
         <figure>
@@ -312,6 +338,34 @@ function createCar(rightHand, model, year) {
                 color: white
             }
             #when-need figure {
+                box-shadow: 0 0 0 1024px rgba(0, 0, 0, 0.6);
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="no-need">
+        <div>
+            <h2>Не нужно если</h2>
+            <ul>
+                <li>Это временное решение</li>
+                <li>Прототип</li>
+                <li>Это простое и маленькое</li>
+                <li>Вы единственный разработчик</li>
+            </ul>
+        </div>
+        <figure>
+            <img src="pictures/no.jpg" alt="" class="cover h">
+        </figure>
+        
+        <style>
+            #no-need * {
+                color: white;
+            }
+
+            #no-need li::before {
+                color: white
+            }
+            #no-need figure {
                 box-shadow: 0 0 0 1024px rgba(0, 0, 0, 0.6);
             }
         </style>

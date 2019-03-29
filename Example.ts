@@ -16,5 +16,5 @@ function createCar(
   return car;
 }
 
-createCar(true, 'DonetskJS car', new Date());
+createCar(true, 'DonetskJS car', 2019);
 
