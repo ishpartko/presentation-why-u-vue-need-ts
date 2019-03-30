@@ -49,7 +49,6 @@
             #about figure {
                 display: flex;
                 flex-wrap: wrap;
-                position: relative;
                 justify-content: space-around;
             }
 
@@ -204,7 +203,6 @@ function createCar(rightHand, model, year) {
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                position: relative;
             }
 
             #js_typings .google-body figure {
@@ -228,9 +226,6 @@ function createCar(rightHand, model, year) {
     <section class="slide" id="why-ts">
         <a href="https://www.typescriptlang.org/" class="cover"><img src="pictures/typescript.png" alt=""></a>
         <style>
-        #why-ts {
-            position: relative;
-        }
         #why-ts a, #why-ts a:active {
             background-image: none;
         }
@@ -250,13 +245,16 @@ function createCar(rightHand, model, year) {
             <img src="pictures/who-use/angular.svg" alt="">
         </figure>
         <style>
+
+            #ts-company {
+                display: flex;
+                align-items: center;
+            }
+
             #ts-company figure {
                 display: flex;
                 flex-wrap: wrap;
-                position: relative;
                 justify-content: space-around;
-                top: 50%;
-                transform: translateY(-50%);
             }
 
             #ts-company figure img {
