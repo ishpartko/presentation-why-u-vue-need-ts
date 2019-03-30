@@ -326,7 +326,12 @@ function createCar(rightHand, model, year) {
     </section>
 
     <section class="slide">
-        <h2 class="place center">TypeScript <s>кушает</s> экономит ваше время</h2>
+        <h2>TypeScript <s>кушает</s> экономит ваше время</h2>
+        <ol>
+            <li class="next">Объясняет ваш код</li>
+            <li class="next">Защищает вас от банальных ошибок</li>
+            <li class="next">Дает свободу рефакторинга</li>
+        </ol>
     </section>
 
     <section class="slide">
@@ -334,18 +339,6 @@ function createCar(rightHand, model, year) {
         <figure class="place center">
             <img src="pictures/unit-tests.jpg" alt="">
         </figure>
-    </section>
-
-    <section class="slide">
-        <h2 class="place center">Защищает вас от банальных ошибок</h2>
-    </section>
-
-    <section class="slide">
-        <h2 class="place center">TypeScript дает свободу рефакторинга</h2>
-    </section>
-
-    <section class="slide">
-        <h2 class="place center">TypeScript объясняет ваш код</h2>
     </section>
 
     <section class="slide">
@@ -449,6 +442,63 @@ function createCar(rightHand, model, year) {
     <section class="slide">
         <h2 class="shout">Vue + TypeScript это очень просто!</h2>
         <small class="place center bottom">(не для всех)</small>
+    </section>
+
+    <section class="slide" id="tsconfig">
+        <h2>tsconfig.json</h2>
+        <pre><code class="lang-json">{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true
+    }
+}</code></pre>
+    <style>
+        #tsconfig pre code {
+            padding: 0;
+            margin: 0;
+            width: 100%
+        }
+    </style>
+    </section>
+
+    <section class="slide" id="tsconfig">
+        <h2>TypeScript загрузчик для webpack</h2>
+        <pre><code class="lang-js">module.exports = {
+  mode: "development",
+  entry: "./app.ts",
+  output: { filename: "bundle.js" },
+  resolve: { extensions: [".ts", ".tsx", ".js"] },
+  module: { 
+      rules: [
+        { test: /\.tsx?$/, loader: "ts-loader" }
+      ] 
+    }
+};</code></pre>
+    <style>
+        #tsconfig pre code {
+            padding: 0;
+            margin: 0;
+            width: 100%
+        }
+    </style>
+    </section>
+
+    <section class="slide" id="tsconfig">
+        <h2>Поддержка синтаксиса декораторов</h2>
+        <pre class="lang-bash"><code>
+yarn add vue-property-decorator -D
+yarn add vue-class-component -D
+        </code></pre>
+    <style>
+        #tsconfig pre code {
+            padding: 0;
+            margin: 0;
+            width: 100%
+        }
+    </style>
     </section>
 
     <section class="slide">
